@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Cazare_HotelDataSet4" targetNamespace="http://tempuri.org/Cazare_HotelDataSet4.xsd" xmlns:mstns="http://tempuri.org/Cazare_HotelDataSet4.xsd" xmlns="http://tempuri.org/Cazare_HotelDataSet4.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="Cazare_HotelConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Cazare_HotelConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.cazare.Properties.Settings.GlobalReference.Default.Cazare_HotelConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="disponibilTableAdapter" GeneratorDataComponentClassName="disponibilTableAdapter" Name="disponibil" UserDataComponentName="disponibilTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Cazare_HotelConnectionString (Settings)" DbObjectName="Cazare_Hotel.dbo.disponibil" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Nume, Tip_Camera, Statut, Starea, Pret FROM dbo.disponibil</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Nume" DataSetColumn="Nume" />
+              <Mapping SourceColumn="Tip_Camera" DataSetColumn="Tip_Camera" />
+              <Mapping SourceColumn="Statut" DataSetColumn="Statut" />
+              <Mapping SourceColumn="Starea" DataSetColumn="Starea" />
+              <Mapping SourceColumn="Pret" DataSetColumn="Pret" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Cazare_HotelDataSet4" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="Cazare_HotelDataSet4" msprop:Generator_DataSetName="Cazare_HotelDataSet4">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="disponibil" msprop:Generator_RowEvHandlerName="disponibilRowChangeEventHandler" msprop:Generator_RowDeletedName="disponibilRowDeleted" msprop:Generator_RowDeletingName="disponibilRowDeleting" msprop:Generator_RowEvArgName="disponibilRowChangeEvent" msprop:Generator_TablePropName="disponibil" msprop:Generator_RowChangedName="disponibilRowChanged" msprop:Generator_RowChangingName="disponibilRowChanging" msprop:Generator_TableClassName="disponibilDataTable" msprop:Generator_RowClassName="disponibilRow" msprop:Generator_TableVarName="tabledisponibil" msprop:Generator_UserTableName="disponibil">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Nume" msprop:Generator_ColumnPropNameInRow="Nume" msprop:Generator_ColumnPropNameInTable="NumeColumn" msprop:Generator_ColumnVarNameInTable="columnNume" msprop:Generator_UserColumnName="Nume">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Tip_Camera" msprop:Generator_ColumnPropNameInRow="Tip_Camera" msprop:Generator_ColumnPropNameInTable="Tip_CameraColumn" msprop:Generator_ColumnVarNameInTable="columnTip_Camera" msprop:Generator_UserColumnName="Tip_Camera">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Statut" msprop:Generator_ColumnPropNameInRow="Statut" msprop:Generator_ColumnPropNameInTable="StatutColumn" msprop:Generator_ColumnVarNameInTable="columnStatut" msprop:Generator_UserColumnName="Statut">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Starea" msprop:Generator_ColumnPropNameInRow="Starea" msprop:Generator_ColumnPropNameInTable="StareaColumn" msprop:Generator_ColumnVarNameInTable="columnStarea" msprop:Generator_UserColumnName="Starea">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Pret" msprop:Generator_ColumnPropNameInRow="Pret" msprop:Generator_ColumnPropNameInTable="PretColumn" msprop:Generator_ColumnVarNameInTable="columnPret" msprop:Generator_UserColumnName="Pret">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="90" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

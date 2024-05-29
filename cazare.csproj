@@ -1,0 +1,653 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B02B3D3B-16FD-423B-8A55-70E10D0B0DAA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>cazare</RootNamespace>
+    <AssemblyName>cazare</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu.Licensing, Version=3.2.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b" />
+    <Reference Include="Bunifu.UI.WinForms.1.5.3">
+      <HintPath>..\BunifuCrack-main\Bunifu.UI.WinForms.1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuButton">
+      <HintPath>..\BunifuCrack-main\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuCheckBox">
+      <HintPath>..\BunifuCrack-main\Bunifu.UI.WinForms.BunifuCheckBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView">
+      <HintPath>..\BunifuCrack-main\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker">
+      <HintPath>..\BunifuCrack-main\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGradientPanel, Version=4.1.1.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Bunifu.UI.WinForms.BunifuGradientPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPanel">
+      <HintPath>..\BunifuCrack-main\Bunifu.UI.WinForms.BunifuPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPictureBox">
+      <HintPath>..\BunifuCrack-main\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuProgressBar">
+      <HintPath>..\BunifuCrack-main\Bunifu.UI.WinForms.BunifuProgressBar.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuShadowPanel">
+      <HintPath>..\BunifuCrack-main\Bunifu.UI.WinForms.BunifuShadowPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuSlider">
+      <HintPath>..\BunifuCrack-main\Bunifu.UI.WinForms.BunifuSlider.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTextbox">
+      <HintPath>..\BunifuCrack-main\Bunifu.UI.WinForms.BunifuTextbox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTransition">
+      <HintPath>..\BunifuCrack-main\Bunifu.UI.WinForms.BunifuTransition.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="GMap.NET.Core, Version=2.1.7.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
+      <HintPath>packages\GMap.NET.Core.2.1.7\lib\net472\GMap.NET.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GMap.NET.WindowsForms, Version=2.1.7.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
+      <HintPath>packages\GMap.NET.WinForms.2.1.7\lib\net472\GMap.NET.WindowsForms.dll</HintPath>
+    </Reference>
+    <Reference Include="GMap.NET.WindowsPresentation, Version=2.1.7.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
+      <HintPath>packages\GMap.NET.WinPresentation.2.1.7\lib\net472\GMap.NET.WindowsPresentation.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlClient, Version=4.6.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.SqlClient.4.8.3\lib\net461\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite, Version=1.0.115.5, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.115.5, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.SQLite.EF6.1.0.115.5\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.115.5, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.SQLite.Linq.1.0.115.5\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddBooking.Designer.cs">
+      <DependentUpon>AddBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddCamera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCamera.Designer.cs">
+      <DependentUpon>AddCamera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddClient.Designer.cs">
+      <DependentUpon>AddClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminLogin.Designer.cs">
+      <DependentUpon>AdminLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminRegister.Designer.cs">
+      <DependentUpon>AdminRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="camere.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="camere.Designer.cs">
+      <DependentUpon>camere.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cazare_HotelDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cazare_HotelDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Cazare_HotelDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cazare_HotelDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Cazare_HotelDataSet10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cazare_HotelDataSet10.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Cazare_HotelDataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cazare_HotelDataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Cazare_HotelDataSet12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cazare_HotelDataSet12.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Cazare_HotelDataSet13.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cazare_HotelDataSet13.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Cazare_HotelDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cazare_HotelDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Cazare_HotelDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cazare_HotelDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Cazare_HotelDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cazare_HotelDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Cazare_HotelDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cazare_HotelDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Cazare_HotelDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cazare_HotelDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Cazare_HotelDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cazare_HotelDataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Cazare_HotelDataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cazare_HotelDataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Cazare_HotelDataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cazare_HotelDataSet9.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="cazari.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="cazari.Designer.cs">
+      <DependentUpon>cazari.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clienti.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="clienti.Designer.cs">
+      <DependentUpon>clienti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataPret.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataPret.Designer.cs">
+      <DependentUpon>DataPret.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Load.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Load.Designer.cs">
+      <DependentUpon>Load.cs</DependentUpon>
+    </Compile>
+    <Compile Include="main.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="main.Designer.cs">
+      <DependentUpon>main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Message.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Message.Designer.cs">
+      <DependentUpon>Message.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\room1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Resources\room1.Designer.cs">
+      <DependentUpon>room1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\room10.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Resources\room10.Designer.cs">
+      <DependentUpon>room10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\room2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Resources\room2.Designer.cs">
+      <DependentUpon>room2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\room3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Resources\room3.Designer.cs">
+      <DependentUpon>room3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\room4.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Resources\room4.Designer.cs">
+      <DependentUpon>room4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\room5.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Resources\room5.Designer.cs">
+      <DependentUpon>room5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\room6.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Resources\room6.Designer.cs">
+      <DependentUpon>room6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\room7.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Resources\room7.Designer.cs">
+      <DependentUpon>room7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\room8.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Resources\room8.Designer.cs">
+      <DependentUpon>room8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\room9.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Resources\room9.Designer.cs">
+      <DependentUpon>room9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tipcamera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tipcamera.Designer.cs">
+      <DependentUpon>tipcamera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tip_camera.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="tip_camera.Designer.cs">
+      <DependentUpon>tip_camera.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddBooking.resx">
+      <DependentUpon>AddBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddCamera.resx">
+      <DependentUpon>AddCamera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddClient.resx">
+      <DependentUpon>AddClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminLogin.resx">
+      <DependentUpon>AdminLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminRegister.resx">
+      <DependentUpon>AdminRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="camere.resx">
+      <DependentUpon>camere.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cazari.resx">
+      <DependentUpon>cazari.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="clienti.resx">
+      <DependentUpon>clienti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataPret.resx">
+      <DependentUpon>DataPret.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Load.resx">
+      <DependentUpon>Load.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="main.resx">
+      <DependentUpon>main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Message.resx">
+      <DependentUpon>Message.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\room1.resx">
+      <DependentUpon>room1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\room10.resx">
+      <DependentUpon>room10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\room2.resx">
+      <DependentUpon>room2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\room3.resx">
+      <DependentUpon>room3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\room4.resx">
+      <DependentUpon>room4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\room5.resx">
+      <DependentUpon>room5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\room6.resx">
+      <DependentUpon>room6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\room7.resx">
+      <DependentUpon>room7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\room8.resx">
+      <DependentUpon>room8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\room9.resx">
+      <DependentUpon>room9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tipcamera.resx">
+      <DependentUpon>tipcamera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tip_camera.resx">
+      <DependentUpon>tip_camera.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Cazare_HotelDataSet.xsc">
+      <DependentUpon>Cazare_HotelDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Cazare_HotelDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Cazare_HotelDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Cazare_HotelDataSet.xss">
+      <DependentUpon>Cazare_HotelDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Cazare_HotelDataSet1.xsc">
+      <DependentUpon>Cazare_HotelDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Cazare_HotelDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Cazare_HotelDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Cazare_HotelDataSet1.xss">
+      <DependentUpon>Cazare_HotelDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Cazare_HotelDataSet10.xsc">
+      <DependentUpon>Cazare_HotelDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="Cazare_HotelDataSet10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Cazare_HotelDataSet10.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Cazare_HotelDataSet10.xss">
+      <DependentUpon>Cazare_HotelDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="Cazare_HotelDataSet11.xsc">
+      <DependentUpon>Cazare_HotelDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="Cazare_HotelDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Cazare_HotelDataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Cazare_HotelDataSet11.xss">
+      <DependentUpon>Cazare_HotelDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="Cazare_HotelDataSet12.xsc">
+      <DependentUpon>Cazare_HotelDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="Cazare_HotelDataSet12.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Cazare_HotelDataSet12.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Cazare_HotelDataSet12.xss">
+      <DependentUpon>Cazare_HotelDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="Cazare_HotelDataSet13.xsc">
+      <DependentUpon>Cazare_HotelDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="Cazare_HotelDataSet13.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Cazare_HotelDataSet13.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Cazare_HotelDataSet13.xss">
+      <DependentUpon>Cazare_HotelDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="Cazare_HotelDataSet2.xsc">
+      <DependentUpon>Cazare_HotelDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="Cazare_HotelDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Cazare_HotelDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Cazare_HotelDataSet2.xss">
+      <DependentUpon>Cazare_HotelDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="Cazare_HotelDataSet3.xsc">
+      <DependentUpon>Cazare_HotelDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="Cazare_HotelDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Cazare_HotelDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Cazare_HotelDataSet3.xss">
+      <DependentUpon>Cazare_HotelDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="Cazare_HotelDataSet4.xsc">
+      <DependentUpon>Cazare_HotelDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="Cazare_HotelDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Cazare_HotelDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Cazare_HotelDataSet4.xss">
+      <DependentUpon>Cazare_HotelDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="Cazare_HotelDataSet5.xsc">
+      <DependentUpon>Cazare_HotelDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="Cazare_HotelDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Cazare_HotelDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Cazare_HotelDataSet5.xss">
+      <DependentUpon>Cazare_HotelDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="Cazare_HotelDataSet6.xsc">
+      <DependentUpon>Cazare_HotelDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="Cazare_HotelDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Cazare_HotelDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Cazare_HotelDataSet6.xss">
+      <DependentUpon>Cazare_HotelDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="Cazare_HotelDataSet7.xsc">
+      <DependentUpon>Cazare_HotelDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="Cazare_HotelDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Cazare_HotelDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Cazare_HotelDataSet7.xss">
+      <DependentUpon>Cazare_HotelDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="Cazare_HotelDataSet8.xsc">
+      <DependentUpon>Cazare_HotelDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="Cazare_HotelDataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Cazare_HotelDataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Cazare_HotelDataSet8.xss">
+      <DependentUpon>Cazare_HotelDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="Cazare_HotelDataSet9.xsc">
+      <DependentUpon>Cazare_HotelDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="Cazare_HotelDataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Cazare_HotelDataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Cazare_HotelDataSet9.xss">
+      <DependentUpon>Cazare_HotelDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\output-onlinepngtools.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\output-onlinepngtools1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
+  </Target>
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
+</Project>
